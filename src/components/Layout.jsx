@@ -4,7 +4,7 @@ import video from '../assets/video.mp4'
 
 function Layout({children}) {
 
-    const [menu, setMenu] = useState(true)
+    const [menu, setMenu] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const url =useLocation().pathname.split('/')
     const page = url[url.length - 1]
@@ -22,6 +22,14 @@ function Layout({children}) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    if(menu === false) {
+      const timer = setTimeout(() => {
+        setMenu(true)
+      }, 2000)
+    }
+  }, [menu])
 
   const wind = isMobile ? { top: '0'} : { right: '0' }
   const step = isMobile ? { top: '-83px'} : {right: '-103px'}
