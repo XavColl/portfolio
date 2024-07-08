@@ -37,9 +37,9 @@ function Layout({children}) {
       <div className='Menu' style={ style }>
         <div className = 'toggle' style={menu === false? {transform:'rotate(-180deg)'} : null}onClick={() => {setMenu(!menu)}}></div>
         <nav>
-        <div className='icon-home'><Link to="/" className='icon'></Link></div>
-        <div className='icon-skills'><Link to="/skills" className='icon'></Link></div>
-        <div className='icon-project'><Link to="/projects" className='icon'></Link></div>
+        <div className='icon-home'><Link to="/portfolio" className='icon'></Link></div>
+        <div className='icon-skills'><Link to="/portfolio/skills" className='icon'></Link></div>
+        <div className='icon-project'><Link to="/portfolio/projects" className='icon'></Link></div>
         </nav>
       </div>
     </div>

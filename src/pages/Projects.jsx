@@ -71,20 +71,20 @@ function Projects() {
   return (
     <div className='Skills'>
       <div className={openTransition? 'fade-in carrousel' : 'carrousel'}>
-        <div className='carousel-container' style={{ transform: getCardTransform(), transition: `${transitioning === true ? 'transform 0.5s ease' : null }` }}>
-          <div className='card' style={{opacity: `${direction === 'previous' ? '1' : '0'}`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }}>
-            {makeCard(titles[(index - 1 + titles.length) % titles.length], texts[(index - 1 + titles.length) % titles.length])}
-          </div>
-          <div className={`card`}  style={{opacity: `${transitioning ? 0 : 1 }`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }}>
-            {makeCard(titles[index], texts[index])}
-          </div>
-          <div className='card' style={{opacity: `${direction === 'next' ? '1' : '0'}`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }} >
-            {makeCard(titles[(index + 1) % titles.length], texts[(index + 1) % titles.length])}
-          </div>
+            <div className='carousel-container' style={{ transform: getCardTransform(), transition: `${transitioning === true ? 'transform 0.5s ease' : null }` }}>
+                <div className='card' style={{opacity: `${direction === 'previous' ? '1' : '0'}`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }}>
+                    {makeCard(titles[(index - 1 + titles.length) % titles.length], texts[(index - 1 + titles.length) % titles.length])}
+                </div>
+                <div className={`card`}  style={{opacity: `${transitioning ? 0 : 1 }`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }}>
+                    {makeCard(titles[index], texts[index])}
+                </div>
+                <div className='card' style={{opacity: `${direction === 'next' ? '1' : '0'}`, transition: `${transitioning === true ? 'opacity 0.5s ease': null}` }} >
+                    {makeCard(titles[(index + 1) % titles.length], texts[(index + 1) % titles.length])}
+                </div>
+            </div>
         </div>
         <button className='next' onClick={next}>Suivant</button>
         <button className='prev' onClick={previous}>Précédent</button>
-      </div>
     </div>
   );
 }
