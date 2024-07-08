@@ -27,7 +27,9 @@ function Layout({children}) {
     if(menu === false) {
       const timer = setTimeout(() => {
         setMenu(true)
-      }, 2000)
+      }, 3000)
+
+      return () => clearTimeout(timer)
     }
   }, [menu])
 
@@ -48,9 +50,9 @@ function Layout({children}) {
       <div className='Menu' style={ style }>
         <div className = 'toggle' style={menu === false? {transform:'rotate(-180deg)'} : null}onClick={() => {setMenu(!menu)}}></div>
         <nav>
-          <div className='icon-home'  style={page === 'portfolio' ? {backgroundColor: 'rgba(255,245,235,0.2)', borderRadius: '5px'} : null}  ><Link to="/portfolio" className='icon'></Link></div>
-          <div className='icon-skills'   style={page === 'skills' ? {backgroundColor: 'rgba(255,245,235,0.2)', borderRadius: '5px'} : null}  ><Link to="/portfolio/skills" className='icon'></Link></div>
-          <div className='icon-project'  style={page === 'projects' ? {backgroundColor: 'rgba(255,245,235,0.2)'  , borderRadius: '5px'} : null}  ><Link to="/portfolio/projects" className='icon'></Link></div>
+          <div className='icon-home'  style={page === 'portfolio' ? {backgroundColor: 'rgba(255,245,235,0.5)', borderRadius: '5px'} : null}  ><Link to="/portfolio" className='icon'></Link></div>
+          <div className='icon-skills'   style={page === 'skills' ? {backgroundColor: 'rgba(255,245,235,0.5)', borderRadius: '5px'} : null}  ><Link to="/portfolio/skills" className='icon'></Link></div>
+          <div className='icon-project'  style={page === 'projects' ? {backgroundColor: 'rgba(255,245,235,0.5)'  , borderRadius: '5px'} : null}  ><Link to="/portfolio/projects" className='icon'></Link></div>
         </nav>
       </div>
     </div>

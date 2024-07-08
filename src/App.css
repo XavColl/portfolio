@@ -259,6 +259,8 @@ a{
   z-index: -1;
 }
 
+
+
 @media (max-width: 768px){
   .Menu {
     position: absolute;
@@ -303,4 +305,10 @@ a{
     right: 20px;
   }
 
+}
+
+@media (max-height: 400px){
+  .text-container{
+    padding-top: 50px;
+  }
 }
