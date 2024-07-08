@@ -21,7 +21,7 @@ function Layout({children}) {
   }, []);
 
   const wind = isMobile ? { top: '0'} : { right: '0' }
-  const step = isMobile ? { top: '-113px'} : {right: '-113px'}
+  const step = isMobile ? { top: '-83px'} : {right: '-103px'}
   const style = menu === true ? step : wind
 
   return (
@@ -32,14 +32,14 @@ function Layout({children}) {
           Your browser does not support HTML5 video.
         </video>
       </div>
-      <div className='name' style={ (menu === false && isMobile === true) ? {top: '130px'}: null }>Xavier Coll</div>
+      <div className='name' style={ (menu === false && isMobile === true) ? {top: '90px'}: null }>Xavier Coll</div>
       {children}
       <div className='Menu' style={ style }>
         <div className = 'toggle' style={menu === false? {transform:'rotate(-180deg)'} : null}onClick={() => {setMenu(!menu)}}></div>
         <nav>
-        <div className='icon-home'><Link to="/portfolio" className='icon'></Link></div>
-        <div className='icon-skills'><Link to="/portfolio/skills" className='icon'></Link></div>
-        <div className='icon-project'><Link to="/portfolio/projects" className='icon'></Link></div>
+          <div className='icon-home'><Link to="/portfolio" className='icon'></Link></div>
+          <div className='icon-skills'><Link to="/portfolio/skills" className='icon'></Link></div>
+          <div className='icon-project'><Link to="/portfolio/projects" className='icon'></Link></div>
         </nav>
       </div>
     </div>
