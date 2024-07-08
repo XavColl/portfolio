@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, } from 'react-router-dom'
 import video from '../assets/video.mp4'
 
 function Layout({children}) {
 
-    const [menu, setMenu] = useState(false)
+    const [menu, setMenu] = useState(true)
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const url =useLocation().pathname.split('/')
+    const page = url[url.length - 1]
+    console.log(url)
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,9 +40,9 @@ function Layout({children}) {
       <div className='Menu' style={ style }>
         <div className = 'toggle' style={menu === false? {transform:'rotate(-180deg)'} : null}onClick={() => {setMenu(!menu)}}></div>
         <nav>
-          <div className='icon-home'><Link to="/portfolio" className='icon'></Link></div>
-          <div className='icon-skills'><Link to="/portfolio/skills" className='icon'></Link></div>
-          <div className='icon-project'><Link to="/portfolio/projects" className='icon'></Link></div>
+          <div className='icon-home'  style={page === 'portfolio' ? {backgroundColor: 'rgba(255,245,235,0.2)', borderRadius: '5px'} : null}  ><Link to="/portfolio" className='icon'></Link></div>
+          <div className='icon-skills'   style={page === 'skills' ? {backgroundColor: 'rgba(255,245,235,0.2)', borderRadius: '5px'} : null}  ><Link to="/portfolio/skills" className='icon'></Link></div>
+          <div className='icon-project'  style={page === 'projects' ? {backgroundColor: 'rgba(255,245,235,0.2)'  , borderRadius: '5px'} : null}  ><Link to="/portfolio/projects" className='icon'></Link></div>
         </nav>
       </div>
     </div>

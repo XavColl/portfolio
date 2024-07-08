@@ -111,7 +111,6 @@ button {
   justify-content: center;
 }
 .title-container{
-  border: 3px solid rgba(252, 243, 233, 1);
   flex: 1;
 }
 
